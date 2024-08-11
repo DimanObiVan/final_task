@@ -26,9 +26,7 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     link = "http://selenium1py.pythonanywhere.com"
     page = BasketPage(browser, link)
     page.open()
-    # page.add_to_cart()
     page.go_to_basket()
-    # time.sleep(3)
     page.basket_is_empty()
     page.basket_is_empty_text() 
 

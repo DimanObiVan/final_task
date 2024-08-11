@@ -5,11 +5,7 @@ from .locators import ProductPageLocators
 
 
 
-class BasketPage(BasePage): 
-    def add_to_cart(self):
-        add = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_NEW)
-        add.click()
-        
+class BasketPage(BasePage):         
     def basket_is_empty(self):
         assert self.is_not_element_present(*BasketPageLocators.GOODS_IN_BASKET), "Basket is not empty!"
         

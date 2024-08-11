@@ -21,10 +21,7 @@ class ProductPage(BasePage):
     def added_book_price(self):
         bookPrice = self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
         addedBookPrice = self.browser.find_element(*ProductPageLocators.CART_PRICE).text
-        # print(bookPrice)
-        # print(addedBookPrice)
         assert bookPrice == addedBookPrice, "Added book price is incorrect"
-        # assert self.browser.find_element(*ProductPageLocators.BOOK_PRICE) == self.browser.find_element(*ProductPageLocators.CART_PRICE), "Added book price is incorrect"
     
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGES), "success message is present!"
